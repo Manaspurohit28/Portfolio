@@ -1,16 +1,17 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  reactStrictMode: true,
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.jsdelivr.net',   // devicon skill logos
+        hostname: 'cdn.jsdelivr.net',
       },
     ],
   },
-  // Strict mode for catching bugs early
-  reactStrictMode: true,
 };
 
 module.exports = nextConfig;

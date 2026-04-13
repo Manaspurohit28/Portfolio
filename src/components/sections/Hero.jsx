@@ -1,7 +1,8 @@
 // src/components/sections/Hero.jsx
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import dynamic               from 'next/dynamic';
 import { gsap }              from 'gsap';
 import { SITE }              from '@/lib/constants';
@@ -20,12 +21,20 @@ const SolarSystem = dynamic(
 
 // ─── Scroll indicator ─────────────────────────────────
 function ScrollIndicator() {
+  const [visible, setVisible] = React.useState(true);
+
+  React.useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY < 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <a
       href="#about"
       aria-label="Scroll to about section"
       style={{
-        position:       'absolute',
+        position:       'fixed',
         bottom:         '40px',
         left:           '50%',
         transform:      'translateX(-50%)',
@@ -40,7 +49,9 @@ function ScrollIndicator() {
         letterSpacing:  '0.15em',
         textTransform:  'uppercase',
         zIndex:         10,
-        animation:      'fadeIn 1s ease 1.8s both',
+        opacity:        visible ? 1 : 0,
+        transition:     'opacity 0.4s ease',
+        pointerEvents:  visible ? 'auto' : 'none',
       }}
     >
       <span>Scroll</span>
@@ -196,7 +207,7 @@ export default function Hero() {
         width:         '55%',
         height:        '100%',
         zIndex:        1,
-        background:    'linear-gradient(to right, rgba(8,8,8,0.98) 60%, transparent 100%)',
+        background:    'linear-gradient(to right, rgba(8,8,8,1.0) 55%, rgba(8,8,8,0.85) 70%, transparent 100%)',
         pointerEvents: 'none',
       }} />
 
@@ -352,14 +363,16 @@ export default function Hero() {
         </div>
         {/* ── end left ── */}
 
-        {/* ── Right — solar system ── */}
+        {/* ── Right — solar system (absolutely positioned so it never pushes section height) ── */}
         <div
           ref={rightRef}
           style={{
-            position:      'relative',
-            width:         '100%',
-            height:        '100vh',
-            display:       'none',     // hidden on mobile
+            position:      'absolute',
+            top:           '-5%',
+            right:         '-8%',
+            width:         '62%',
+            height:        '110%',
+            display:       'none',
             pointerEvents: 'auto',
           }}
           className="hero-right"

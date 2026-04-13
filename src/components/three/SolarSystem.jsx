@@ -10,14 +10,14 @@ export default function SolarSystem() {
   return (
     <Canvas
       camera={{
-        position: [0, 3, 10],
-        fov:      55,
+        position: [0, 2.5, 11],
+        fov:      65,
         near:     0.1,
         far:      1000,
       }}
       style={{
-        width:   '100%',
-        height:  '100%',
+        width:      '100%',
+        height:     '100%',
         background: 'transparent',
       }}
       gl={{
@@ -27,7 +27,7 @@ export default function SolarSystem() {
       }}
       dpr={[1, 1.5]}
     >
-      <ambientLight intensity={0.1} />
+      <ambientLight intensity={0.12} />
 
       <Suspense fallback={null}>
         <ParticleField count={2000} />

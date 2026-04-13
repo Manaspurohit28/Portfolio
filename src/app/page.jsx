@@ -15,12 +15,14 @@ import Skills          from '@/components/sections/Skills';
 import Experience      from '@/components/sections/Experience';
 import Certificates    from '@/components/sections/Certificates';
 import Contact         from '@/components/sections/Contact';
+import CustomCursor    from '@/components/ui/CustomCursor';
 
 export default function Home() {
   const [notification, setNotification] = useState('');
 
   return (
     <>
+      <CustomCursor />
       <ScrollProgress />
       <Notification
         message={notification}
