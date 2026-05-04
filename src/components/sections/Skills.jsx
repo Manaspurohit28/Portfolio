@@ -124,9 +124,8 @@ export default function Skills() {
       <div
         ref={headerRef}
         style={{
-          maxWidth:     '1152px',
           margin:       '0 auto',
-          padding:      '0 24px',
+          padding:      '48px 157px',
           marginBottom: '56px',
         }}
       >

@@ -228,11 +228,9 @@ export default function Hero() {
         position:            'relative',
         zIndex:              3,
         width:               '100%',
-        maxWidth:            '1152px',
+        maxWidth:            'none',
         margin:              '0 auto',
-        padding:             '0 24px',
-        paddingTop:          '100px',
-        paddingBottom:       '100px',
+        padding:             '100px 157px',
         display:             'grid',
         gridTemplateColumns: '1fr 1fr',
         alignItems:          'center',
@@ -241,7 +239,6 @@ export default function Hero() {
 
         {/* ── Left — text — pointer events on ── */}
         <div style={{
-          maxWidth:      '560px',
           pointerEvents: 'auto',
         }}>
 
@@ -310,7 +307,6 @@ export default function Hero() {
               color:        '#888888',
               lineHeight:   1.75,
               marginBottom: '36px',
-              maxWidth:     '480px',
             }}
           >
             Aspiring software engineer passionate about ML, GenAI,

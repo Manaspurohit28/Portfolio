@@ -14,8 +14,8 @@
   --accent-muted:    #cccccc;
   --accent-soft:     rgba(255, 255, 255, 0.08);
 
-  /* Single source of truth for max content width */
-  --max-w: 1152px;
+  /* ── Fixed 157px side margin — never changes regardless of screen size ── */
+  --side-margin: 157px;
 }
 
 /* ─── Reset ──────────────────────────────────────────── */
@@ -43,21 +43,12 @@ body {
   transition:       background 0.3s ease;
 }
 
-/* ─── The universal centering rule ───────────────────── */
-/* Every inner content div just needs this class          */
-.content-width {
-  width:     100%;
-  max-width: var(--max-w);   /* 1152px — same on every screen */
-  margin:    0 auto;
-  padding:   0 24px;
-}
-
+/* ─── Core layout — 157px fixed sides always ─────────── */
 .container {
   width:         100%;
-  max-width:     var(--max-w);
   margin:        0 auto;
-  padding-left:  24px;
-  padding-right: 24px;
+  padding-left:  var(--side-margin);
+  padding-right: var(--side-margin);
 }
 
 .section {
@@ -65,12 +56,11 @@ body {
   padding-bottom: 100px;
 }
 
+/* All sections use this — 157px sides + vertical spacing */
 .section-wrapper {
-  max-width: var(--max-w);
-  margin:    0 auto;
-  padding:   96px 24px;
-  position:  relative;
-  z-index:   1;
+  padding:  96px var(--side-margin);
+  position: relative;
+  z-index:  1;
 }
 
 /* Scrollbar */
@@ -101,7 +91,7 @@ body {
   font-size:       0.875rem;
   text-decoration: none;
   border:          none;
-  cursor:          none;
+  cursor:          pointer;
   transition:      all 0.2s ease;
   white-space:     nowrap;
 }
@@ -124,7 +114,7 @@ body {
   font-size:       0.875rem;
   text-decoration: none;
   border:          1px solid rgba(255, 255, 255, 0.12);
-  cursor:          none;
+  cursor:          pointer;
   transition:      all 0.2s ease;
   white-space:     nowrap;
 }

@@ -17,10 +17,9 @@ export default function Footer() {
       borderTop:   '1px solid rgba(255,255,255,0.05)',
     }}>
       <div style={{
-        maxWidth: '1152px',
-        margin:   '0 auto',
-        padding:  '48px 24px',
-        width:    '100%',
+        margin:      '0 auto',
+        padding:     '48px 157px',
+        width:       '100%',
       }}>
 
         {/* Top row */}
