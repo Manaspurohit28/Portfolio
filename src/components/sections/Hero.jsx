@@ -230,7 +230,7 @@ export default function Hero() {
         width:               '100%',
         maxWidth:            'none',
         margin:              '0 auto',
-        padding:             '100px 157px',
+        padding:             '100px var(--side-margin)',
         display:             'grid',
         gridTemplateColumns: '1fr 1fr',
         alignItems:          'center',

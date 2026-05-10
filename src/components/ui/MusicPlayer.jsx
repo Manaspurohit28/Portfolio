@@ -14,7 +14,7 @@ export const audioData = {
 };
 
 export default function MusicPlayer() {
-  const [playing,  setPlaying]  = useState(true);  // ← default ON
+  const [playing,  setPlaying]  = useState(false); // set true only after audio actually starts
   const [mounted,  setMounted]  = useState(false);
   const [bars,     setBars]     = useState([3, 5, 3, 5, 3]);
 
@@ -39,8 +39,9 @@ export default function MusicPlayer() {
         contextRef.current.resume();
       }
 
-      audio.play().catch(() => {
-        // If autoplay blocked silently fail
+      audio.play().then(() => {
+        setPlaying(true);
+      }).catch(() => {
         setPlaying(false);
       });
 
@@ -60,6 +61,7 @@ export default function MusicPlayer() {
         setupAnalyser(audio);
         await audio.play();
         audioData.isPlaying = true;
+        setPlaying(true);
         startBarsAnimation();
       } catch {
         // Autoplay blocked — wait for first interaction

@@ -18,7 +18,7 @@ export default function Footer() {
     }}>
       <div style={{
         margin:      '0 auto',
-        padding:     '48px 157px',
+        padding:     '48px var(--side-margin)',
         width:       '100%',
       }}>
 

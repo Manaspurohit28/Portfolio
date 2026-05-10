@@ -606,9 +606,7 @@ export default function Projects() {
         ref={containerRef}
         style={{
           position: 'relative',
-          width: '100vw',
-          left: '50%',
-          transform: 'translateX(-50%)',
+          width: '100%',
           height: 'min(70vh, 700px)',
 
           background: 'transparent',

@@ -14,8 +14,16 @@
   --accent-muted:    #cccccc;
   --accent-soft:     rgba(255, 255, 255, 0.08);
 
-  /* ── Fixed 157px side margin — never changes regardless of screen size ── */
+  /* ── Responsive side margin ── */
   --side-margin: 157px;
+}
+
+@media (max-width: 1024px) {
+  :root { --side-margin: 60px; }
+}
+
+@media (max-width: 767px) {
+  :root { --side-margin: 20px; }
 }
 
 /* ─── Reset ──────────────────────────────────────────── */
