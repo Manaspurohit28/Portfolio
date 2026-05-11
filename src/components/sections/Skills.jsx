@@ -125,7 +125,8 @@ export default function Skills() {
         ref={headerRef}
         style={{
           margin:       '0 auto',
-          padding:      '48px 157px',
+          paddingLeft:    'var(--side-margin)',
+          paddingRight:   'var(--side-margin)',
           marginBottom: '56px',
         }}
       >
