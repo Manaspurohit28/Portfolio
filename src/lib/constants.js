@@ -8,7 +8,7 @@ export const SITE = {
   linkedin:  'https://linkedin.com/in/manaspurohit28',
   github:    'https://github.com/Manaspurohit28',
   instagram: 'https://instagram.com/manaspurohit28',
-  resume:    'https://drive.google.com/uc?export=download&id=YOUR_FILE_ID',
+  resume:    'https://drive.google.com/file/d/1FbhcWfFXtGIryFxv0gGwF_v-2lH_aHAg/view?usp=drive_link',
 };
 
 export const ASSETS = {
